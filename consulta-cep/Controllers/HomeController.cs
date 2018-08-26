@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using System.IO;
 using consulta_cep.Model;
 using System.Collections.Generic;
+using consulta_cep.Repository;
 
 namespace consulta_cep.Controllers
 {
@@ -65,6 +66,10 @@ namespace consulta_cep.Controllers
                             ViewBag.gia = retorno.gia;
                             ViewBag.unidade = retorno.unidade;
                             ViewBag.ibge = retorno.ibge;
+
+                            CepRepository cepRepository = new CepRepository();
+
+                            cepRepository.salvar(retorno);
                             
                         }
                     }
