@@ -1,0 +1,56 @@
+﻿@model consulta_cep.Model.Cep
+
+    @{
+        ViewBag.Title = "Home";
+    }
+
+    <h2>Home</h2>
+    <p>
+        Informe abaixo um número de cep para ser consultado
+
+
+        <br />
+
+        <form name="frmBuscarCep" id="frmBuscarCep" method="post">
+
+            <input type="text" name="cep" id="cep" />
+            <input type="submit" name="btnBuscar" id="btnBuscar" value="Buscar" />
+            <input type="submit" name="btnBuscar" id="btnLimpar" value="Limpar" onclick="javascript: window.location.href='/Home/Index'" />
+        </form>
+
+
+        <div>
+                <br />
+            <br />
+            @if (ViewBag.cep != null)
+            {
+            <table>
+                
+
+
+            <tr><td><b>Cep:</b>@ViewBag.cep</td></tr>
+                <tr>
+                    <td>
+                      <b>Logradouro:</b>  @ViewBag.logradouro
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Complemento:</b>@ViewBag.complemento</td>
+                </tr>
+                <tr><td><b>Bairro:</b>@ViewBag.bairro</td></tr>
+                <tr><td><b>Cidade:</b>@ViewBag.localidade</td></tr>
+                <tr><td><b>Estado:</b> @ViewBag.uf</td></tr>
+                <tr><td><b>Gia:</b>@ViewBag.gia</td></tr>
+                <tr>
+                    <td>
+                        <b>Unidade:</b> @ViewBag.unidade
+                    </td>
+                </tr>
+                <tr><td><b>Ibge:</b> @ViewBag.ibge</td></tr>
+
+
+</table>
+            }
+        </div>
+
+    </p>
