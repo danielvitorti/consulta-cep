@@ -65,17 +65,13 @@ namespace consulta_cep.Controllers
                             ViewBag.gia = retorno.gia;
                             ViewBag.unidade = retorno.unidade;
                             ViewBag.ibge = retorno.ibge;
-
-
-
-
-                            //model.ListaCep = retorno ;
+                            
                         }
                     }
                     catch (Exception e)
                     {
-                        
-                        ViewBag.erro = "Ocorreu um erro ao buscar os dados do cep informado. Por favor, tente novamente."
+
+                        ViewBag.erro = "Ocorreu um erro ao buscar os dados do cep informado. Por favor, tente novamente.";
                     }
                 }
 
