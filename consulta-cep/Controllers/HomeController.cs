@@ -74,7 +74,8 @@ namespace consulta_cep.Controllers
                     }
                     catch (Exception e)
                     {
-                        Response.Write("Ocorreu um erro ao buscar os dados do cep informado. Por favor, recarregue a página e tente novamente");
+                        
+                        ViewBag.erro = "Ocorreu um erro ao buscar os dados do cep informado. Por favor, tente novamente."
                     }
                 }
 

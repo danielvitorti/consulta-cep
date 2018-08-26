@@ -15,7 +15,7 @@
 
             <input type="text" name="cep" id="cep" />
             <input type="submit" name="btnBuscar" id="btnBuscar" value="Buscar" />
-            <input type="submit" name="btnBuscar" id="btnLimpar" value="Limpar" onclick="javascript: window.location.href='/Home/Index'" />
+            <input type="button" name="btnBuscar" id="btnLimpar" value="Limpar" onclick="javascript: window.location.href='/Home/Index'" />
         </form>
 
 
@@ -50,6 +50,14 @@
 
 
 </table>
+            }
+
+            @if (ViewBag.erro != null )
+            {
+                <center>
+                    <font color="red">@ViewBag.erro </font>
+                </center>
+
             }
         </div>
 
