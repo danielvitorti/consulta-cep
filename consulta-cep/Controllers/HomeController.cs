@@ -69,7 +69,10 @@ namespace consulta_cep.Controllers
 
                             CepRepository cepRepository = new CepRepository();
 
-                            cepRepository.salvar(retorno);
+                            if(!cepRepository.salvar(retorno))
+                            {
+                                Response.Write("Erro ao salvar em arquivo xml");
+                            }
                             
                         }
                     }
