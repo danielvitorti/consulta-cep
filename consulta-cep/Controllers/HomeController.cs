@@ -68,9 +68,11 @@ namespace consulta_cep.Controllers
                             ViewBag.ibge = retorno.ibge;
 
                             CepRepository cepRepository = new CepRepository();
+                            cepRepository.verificarPorId(retorno);
 
-                            if(!cepRepository.salvar(retorno))
+                            if (!cepRepository.salvar(retorno))
                             {
+
                                 Response.Write("Erro ao salvar em arquivo xml");
                             }
                             
@@ -79,7 +81,7 @@ namespace consulta_cep.Controllers
                     catch (Exception e)
                     {
 
-                        ViewBag.erro = "Ocorreu um erro ao buscar os dados do cep informado. Por favor, tente novamente.";
+                        ViewBag.erro = "Ocorreu um erro ao buscar os dados do cep informado. Por favor, tente novamente." + e.Message;
                     }
                 }
 
